@@ -21,3 +21,12 @@
 2. 打开命令行或在 PyCharm 中运行 `caesar_cipher.py`：
 ```bash
 python caesar_cipher.py
+
+---
+
+## 运行测试
+项目包含一个最小化的 pytest 测试套件,验证加密、解密、非字母字符与大小写处理:
+```bash
+pip install pytest
+python -m pytest -q
+```
