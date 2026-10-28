@@ -3,7 +3,7 @@
 def encrypt(text, shift):
     result = ""
     for char in text:
-        if char.isalpha():  # 只加密字母
+        if ('A' <= char <= 'Z') or ('a' <= char <= 'z'):  # 只移位 ASCII 英文字母
             base = ord('A') if char.isupper() else ord('a')
             result += chr((ord(char) - base + shift) % 26 + base)
         else:

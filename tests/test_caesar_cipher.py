@@ -32,3 +32,10 @@ def test_case_is_preserved():
 
 def test_negative_shift_wraps_correctly():
     assert encrypt("abc", -1) == "zab"
+
+
+def test_non_ascii_text_is_preserved_and_roundtrips():
+    text = "中文 café Ångström! Hello"
+    encoded = encrypt(text, 3)
+    assert encoded == "中文 fdié Åqjvwuöp! Khoor"
+    assert decrypt(encoded, 3) == text
